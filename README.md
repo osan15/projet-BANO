@@ -25,6 +25,7 @@ All commands must be run from the current path(config,data,srv,env.py,...)
 
 * Python 3.5.*
 * Elasticsearch 5.1.*
+* Python package : flask,elasticsearch,codecs,json (Run "pip install packagename" )
 
 ## API Reference
 

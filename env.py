@@ -35,7 +35,7 @@ doc_type_name = elasticsearch_doc_type
 path = exec_path + '\\data\\' + import_file_name
 settings = {"settings": {"index.mapping.total_fields.limit": elasticsearch_settings_fields_limit}}  #
 
-#Prepare DB, delete index if already exist, and set settings
+#Prepare DB, delete index if altre
 es.indices.delete(index=index_name)
 es.indices.create(index=index_name)
 es.indices.put_settings(index=index_name, body=settings)
