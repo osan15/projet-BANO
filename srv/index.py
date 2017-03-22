@@ -11,7 +11,8 @@ from utils.YAML_Parser import YAML_Parser
 exec_path = os.getcwd()
 print("Exec Path : " + exec_path)
 # Load config file
-config_file_path = file = exec_path + "\\config\\config.yaml"
+config_file_path = os.path.join(exec_path, "config", "config.yaml")
+#config_file_path = file = exec_path + "\\config\\config.yaml"
 yaml_parser = YAML_Parser(file=config_file_path)
 
 

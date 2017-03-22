@@ -15,7 +15,8 @@ start_time = datetime.now()
 print("Début : " + start_time.strftime('%Y-%m-%d %H:%M:%S'))
 
 # Load config file
-config_file_path = file = exec_path + "\\config\\config.yaml"
+#config_file_path = file = exec_path + "\\config\\config.yaml"
+config_file_path = os.path.join(exec_path, "config", "config.yaml")
 yaml_parser = YAML_Parser(file=config_file_path)
 
 # global config parameters
@@ -32,7 +33,9 @@ import_file_name = config.get("import_file")
 es = Elasticsearch(timeout=elasticsearch_timeout, hosts=elasticsearch_host + ":" + str(elasticsearch_port))
 index_name = elasticsearch_index
 doc_type_name = elasticsearch_doc_type
-path = exec_path + '\\data\\' + import_file_name
+path = os.path.join(exec_path, "data", import_file_name)
+#path = exec_path + '\\data\\' + import_file_name
+
 settings = {"settings": {"index.mapping.total_fields.limit": elasticsearch_settings_fields_limit}}  #
 
 #Prepare DB, delete index if already exist, and set settings
