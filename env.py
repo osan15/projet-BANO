@@ -41,7 +41,6 @@ settings = {"settings": {"index.mapping.total_fields.limit": elasticsearch_setti
 #Prepare DB, delete index if already exist, and set settings
 if es.indices.exists(index=index_name):
     es.indices.delete(index=index_name)
-exit()
 es.indices.create(index=index_name)
 es.indices.put_settings(index=index_name, body=settings)
 
